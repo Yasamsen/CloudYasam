@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Yasam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:20px 10px 10px;
+}
+header h1{
+  margin:0;
+  font-size:1.5rem;
+}
+header p{
+  font-size:.8rem;
+  opacity:.8;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:900px;
+  margin:0 auto 10px;
+  padding:0 10px;
+}
+.search-box input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  font-size:.85rem;
+}
+
+/* LIST */
+.list{
+  max-width:900px;
+  margin:auto;
+  padding:10px;
+}
+
+/* ITEM */
+.item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:10px;
+  cursor:pointer;
+  transition:.25s;
+  backdrop-filter:blur(8px);
+}
+
+.item:hover{
+  background:rgba(255,255,255,.15);
+  transform:translateX(5px);
+}
+
+.item img{
+  width:55px;
+  height:55px;
+  border-radius:10px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.info{
+  flex:1;
+  min-width:0;
+}
+
+.info h3{
+  margin:0;
+  font-size:.95rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.info span{
+  font-size:.72rem;
+  opacity:.7;
+}
+
+.arrow{
+  font-size:1.2rem;
+  opacity:.6;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px 10px;
+  font-size:.75rem;
+  opacity:.7;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .item img{
+    width:45px;
+    height:45px;
+  }
+  header h1{
+    font-size:1.25rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>☁️ Cloud Yasam</h1>
+  <p>Search pintar • Klik untuk download</p>
+</header>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="Cari script / bot / panel...">
+</div>
+
+<div class="list">
+
+  <div class="item"
+    data-name="sc whatsapp wa md bot baileys"
+    onclick="window.open('https://www.mediafire.com/FILE1','_blank')">
+    <img src="https://i.imgur.com/5ZQZ5Zy.png">
+    <div class="info">
+      <h3>SC WhatsApp MD</h3>
+      <span>Bot • Update terbaru</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item"
+    data-name="bot telegram md python broadcast"
+    onclick="window.open('https://www.mediafire.com/FILE2','_blank')">
+    <img src="https://i.imgur.com/JQ9p5Zy.png">
+    <div class="info">
+      <h3>Bot Telegram MD</h3>
+      <span>Python • Broadcast</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item"
+    data-name="Base Apk Bug"
+    onclick="window.open('https://www.mediafire.com/FILE3','_blank')">
+    <img src="https://i.imgur.com/2yaf2wb.png">
+    <div class="info">
+      <h3>Base Apk Bug</h3>
+      <span>Apk Bug</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item"
+    data-name="Installer Panel"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Installer Panel</h3>
+      <span>Utility • Tools</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="item"
+    data-name="Base Bot wa"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Base wa Noenc</h3>
+      <span>Utility • WhatsApp</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+  
+    <div class="item"
+    data-name="Bot Ddos Via Tele"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Bot Ddos Via tele</h3>
+      <span>Utility • Telegram</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+    <div class="item"
+    data-name="Ubot Via Panel"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Ubot Via Panel</h3>
+      <span>Nodejs • Telegram</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+    <div class="item"
+    data-name="Ubot Via Termux"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Ubot Via Termux</h3>
+      <span>Python • Telegram</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+    <div class="item"
+    data-name="Web Bug DarkVerse"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>Web Bug DarkVerse</h3>
+      <span>Beckhend • Bug</span>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Cloud Yasam ☁️  
+  <br>
+  Yasam • WhatsApp: <b>+62 815-1998-6005</b>
+</footer>
+
+<!-- 🎵 AUDIO -->
+<audio id="bgm" loop>
+  <!-- GANTI DENGAN LAGU KAMU -->
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* SEARCH FUZZY */
+const search = document.getElementById("search");
+const items = document.querySelectorAll(".item");
+
+function similarity(a, b){
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  let match = 0;
+  for(let c of a){
+    if(b.includes(c)) match++;
+  }
+  return match / Math.max(a.length, b.length);
+}
+
+search.addEventListener("input", () => {
+  const key = search.value.toLowerCase();
+  items.forEach(item => {
+    const name = item.dataset.name;
+    const score = similarity(key, name);
+    item.style.display = (name.includes(key) || score > 0.4) ? "flex" : "none";
+  });
+});
+
+/* 🎶 AUTO PLAY MUSIC ON FIRST CLICK */
+const audio = document.getElementById("bgm");
+let played = false;
+
+function playMusic(){
+  if(!played){
+    audio.volume = 0.5;
+    audio.play().catch(()=>{});
+    played = true;
+  }
+}
+
+document.addEventListener("click", playMusic);
+document.addEventListener("touchstart", playMusic);
+</script>
+
+</body>
+</html>
