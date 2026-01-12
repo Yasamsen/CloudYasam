@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Yasam</title>
+<title>☁️ Cloud Yasam</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -13,17 +13,33 @@
   font-family:'Poppins',sans-serif;
 }
 
+/* BODY */
 body{
   margin:0;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color:#fff;
   min-height:100vh;
+  background:#000;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND FIXED TOTAL */
+.bg-fixed{
+  position:fixed;
+  inset:0;
+  background:url("https://files.catbox.moe/tdtkq1.jpg") center/cover no-repeat;
+  z-index:-2;
+}
+.bg-fixed::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.28);
 }
 
 /* HEADER */
 header{
   text-align:center;
-  padding:20px 10px 10px;
+  padding:22px 10px 12px;
 }
 header h1{
   margin:0;
@@ -61,33 +77,27 @@ header p{
   display:flex;
   align-items:center;
   gap:12px;
-  background:rgba(255,255,255,.08);
+  background:rgba(0,0,0,.45);
   border-radius:14px;
   padding:12px;
   margin-bottom:10px;
   cursor:pointer;
   transition:.25s;
-  backdrop-filter:blur(8px);
 }
-
 .item:hover{
-  background:rgba(255,255,255,.15);
-  transform:translateX(5px);
+  background:rgba(0,0,0,.65);
+  transform:translateX(6px);
 }
-
 .item img{
   width:55px;
   height:55px;
   border-radius:10px;
   object-fit:cover;
-  flex-shrink:0;
 }
-
 .info{
   flex:1;
   min-width:0;
 }
-
 .info h3{
   margin:0;
   font-size:.95rem;
@@ -95,15 +105,91 @@ header p{
   overflow:hidden;
   text-overflow:ellipsis;
 }
-
 .info span{
   font-size:.72rem;
   opacity:.7;
 }
-
 .arrow{
   font-size:1.2rem;
   opacity:.6;
+}
+
+/* DIVIDER */
+.divider-text{
+  max-width:900px;
+  margin:25px auto;
+  text-align:center;
+  position:relative;
+  font-size:.75rem;
+  opacity:.85;
+}
+.divider-text::before,
+.divider-text::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:35%;
+  height:1px;
+  background:rgba(255,255,255,.3);
+}
+.divider-text::before{left:0;}
+.divider-text::after{right:0;}
+.divider-text span{
+  background:rgba(0,0,0,.6);
+  padding:0 12px;
+  border-radius:8px;
+}
+
+/* SUPPORT CARD */
+.support-card{
+  max-width:900px;
+  margin:20px auto;
+  padding:16px;
+  background:rgba(0,0,0,.45);
+  border-radius:14px;
+  text-align:center;
+  transition:.25s;
+}
+.support-card:hover{
+  background:rgba(0,0,0,.65);
+  transform:translateX(6px);
+}
+.support-card .social-links{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.support-card .social-links a{
+  font-size:.75rem;
+  padding:6px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
+}
+.support-card .social-links a:hover{
+  background:rgba(255,255,255,.3);
+}
+.support-card .donate-box img{
+  width:260px;
+  max-width:100%;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+.support-card .donate-box button{
+  margin-top:10px;
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  cursor:pointer;
+}
+.support-card .donate-box button:hover{
+  background:rgba(255,255,255,.3);
+  transform:scale(1.05);
 }
 
 /* FOOTER */
@@ -116,18 +202,15 @@ footer{
 
 /* MOBILE */
 @media(max-width:480px){
-  .item img{
-    width:45px;
-    height:45px;
-  }
-  header h1{
-    font-size:1.25rem;
-  }
+  .item img{width:45px;height:45px;}
+  header h1{font-size:1.25rem;}
 }
 </style>
 </head>
 
 <body>
+
+<div class="bg-fixed"></div>
 
 <header>
   <h1>☁️ Cloud Yasam</h1>
@@ -250,58 +333,68 @@ footer{
     <div class="arrow">›</div>
   </div>
 
+    <div class="item"
+    data-name="Tools Ddos V5"
+    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
+    <img src="https://i.imgur.com/Fd4ZKzE.png">
+    <div class="info">
+      <h3>SC Tools AlyaSamXDdos</h3>
+      <span>Tools • Nodejs</span>
+    </div>
+    <div class="arrow">›</div>
+
 </div>
 
-<footer>
-  © 2026 Cloud Yasam ☁️  
-  <br>
-  Yasam • WhatsApp: <b>+62 815-1998-6005</b>
-</footer>
+<div class="divider-text">
+  <span>💖 Support Developer</span>
+</div>
 
-<!-- 🎵 AUDIO -->
-<audio id="bgm" loop>
-  <!-- GANTI DENGAN LAGU KAMU -->
-  <source src="lagu.mp3" type="audio/mpeg">
+<div class="support-card">
+  <h2>💖 Support & Sosial</h2>
+  <p>Dukung developer & follow biar makin update ✨</p>
+
+  <div class="social-links">
+    <a href="https://wa.me/6281519986005">💬 WhatsApp</a>
+    <a href="https://youtube.com">▶️ YouTube</a>
+    <a href="https://instagram.com">📸 Instagram</a>
+  </div>
+
+<!-- 💖 DONATE -->
+<div class="donate-box">
+  <button onclick="window.open('https://files.catbox.moe/mpm1ja.jpg','_blank')">
+    💸 Donate via QRIS
+  </button>
+</div>
+
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgm" preload="auto" loop>
+  <source src="https://files.catbox.moe/abc123.mp3" type="audio/mpeg">
 </audio>
 
+<footer>
+  © 2026 Cloud Yasam ☁️
+</footer>
+
 <script>
-/* SEARCH FUZZY */
 const search = document.getElementById("search");
 const items = document.querySelectorAll(".item");
+const audio = document.getElementById("bgm");
+let played=false;
 
-function similarity(a, b){
-  a = a.toLowerCase();
-  b = b.toLowerCase();
-  let match = 0;
-  for(let c of a){
-    if(b.includes(c)) match++;
-  }
-  return match / Math.max(a.length, b.length);
-}
-
-search.addEventListener("input", () => {
-  const key = search.value.toLowerCase();
-  items.forEach(item => {
-    const name = item.dataset.name;
-    const score = similarity(key, name);
-    item.style.display = (name.includes(key) || score > 0.4) ? "flex" : "none";
+search.addEventListener("input",()=>{
+  const k=search.value.toLowerCase();
+  items.forEach(i=>{
+    i.style.display=i.dataset.name.includes(k)?"flex":"none";
   });
 });
 
-/* 🎶 AUTO PLAY MUSIC ON FIRST CLICK */
-const audio = document.getElementById("bgm");
-let played = false;
-
-function playMusic(){
+document.addEventListener("click",()=>{
   if(!played){
-    audio.volume = 0.5;
+    audio.volume=.5;
     audio.play().catch(()=>{});
-    played = true;
+    played=true;
   }
-}
-
-document.addEventListener("click", playMusic);
-document.addEventListener("touchstart", playMusic);
+});
 </script>
 
 </body>
