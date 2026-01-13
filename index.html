@@ -21,7 +21,6 @@ body{
   background:#000;
   overflow-x:hidden;
 }
-
 /* BACKGROUND FIXED TOTAL */
 .bg-fixed{
   position:fixed;
@@ -71,7 +70,6 @@ header p{
   margin:auto;
   padding:10px;
 }
-
 /* ITEM */
 .item{
   display:flex;
@@ -141,57 +139,99 @@ header p{
 }
 
 /* SUPPORT CARD */
-.support-card{
-  max-width:900px;
-  margin:20px auto;
-  padding:16px;
-  background:rgba(0,0,0,.45);
-  border-radius:14px;
-  text-align:center;
-  transition:.25s;
-}
-.support-card:hover{
-  background:rgba(0,0,0,.65);
-  transform:translateX(6px);
-}
-.support-card .social-links{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:14px;
-}
-.support-card .social-links a{
-  font-size:.75rem;
-  padding:6px 12px;
-  border-radius:10px;
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  text-decoration:none;
-}
-.support-card .social-links a:hover{
-  background:rgba(255,255,255,.3);
-}
-.support-card .donate-box img{
-  width:260px;
-  max-width:100%;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
-.support-card .donate-box button{
-  margin-top:10px;
-  padding:10px 18px;
-  border:none;
-  border-radius:12px;
-  background:rgba(255,255,255,.15);
-  color:#fff;
-  cursor:pointer;
-}
-.support-card .donate-box button:hover{
-  background:rgba(255,255,255,.3);
-  transform:scale(1.05);
-}
+  .support-float {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
 
+  .support-float.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .social-links {
+    margin-top: 10px;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 6px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    animation: floatBtn 3s ease-in-out infinite;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    will-change: transform;
+  }
+
+  /* efek hover desktop */
+  .social-links a:hover {
+    transform: translateY(-2px);
+  }
+
+  /* efek ditekan */
+  .social-links a:active {
+    transform: scale(0.92) rotate(-2deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    animation: shake 0.25s;
+  }
+
+  @keyframes floatBtn {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes shake {
+    0% { transform: scale(0.92) rotate(0); }
+    25% { transform: scale(0.92) rotate(-3deg); }
+    50% { transform: scale(0.92) rotate(3deg); }
+    75% { transform: scale(0.92) rotate(-2deg); }
+    100% { transform: scale(0.92) rotate(0); }
+  }
+  .qris-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 999px; /* super bulat */
+    background: rgba(15, 15, 18, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    animation: floatBtn 3s ease-in-out infinite;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+  }
+
+  .qris-link img {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 999px; /* QR ikut bulat */
+    display: block;
+  }
+
+  .qris-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .qris-link:active {
+    transform: scale(0.92);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.55);
+    animation: shake 0.25s;
+  }
+  /* PEMBATAS */
+  .support-trigger {
+    height: 30px;
+  }
 /* FOOTER */
 footer{
   text-align:center;
@@ -226,7 +266,7 @@ footer{
   <div class="item"
     data-name="sc whatsapp wa md bot baileys"
     onclick="window.open('https://www.mediafire.com/FILE1','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>SC WhatsApp MD</h3>
       <span>Bot • Update terbaru</span>
@@ -237,7 +277,7 @@ footer{
   <div class="item"
     data-name="bot telegram md python broadcast"
     onclick="window.open('https://www.mediafire.com/FILE2','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Bot Telegram MD</h3>
       <span>Python • Broadcast</span>
@@ -248,7 +288,7 @@ footer{
   <div class="item"
     data-name="Base Apk Bug"
     onclick="window.open('https://www.mediafire.com/FILE3','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Base Apk Bug</h3>
       <span>Apk Bug</span>
@@ -259,7 +299,7 @@ footer{
   <div class="item"
     data-name="Installer Panel"
     onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Installer Panel</h3>
       <span>Utility • Tools</span>
@@ -270,7 +310,7 @@ footer{
   <div class="item"
     data-name="Base Bot wa"
     onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Base wa Noenc</h3>
       <span>Utility • WhatsApp</span>
@@ -280,8 +320,8 @@ footer{
   
     <div class="item"
     data-name="Bot Ddos Via Tele"
-    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/caxzowhfk9774gu/Bot_Ddos_Tele.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Bot Ddos Via tele</h3>
       <span>Utility • Telegram</span>
@@ -292,7 +332,7 @@ footer{
     <div class="item"
     data-name="Ubot Via Panel"
     onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Ubot Via Panel</h3>
       <span>Nodejs • Telegram</span>
@@ -302,8 +342,8 @@ footer{
 
     <div class="item"
     data-name="Ubot Via Termux"
-    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/efjpck2efmlzhlh/UBOT_TERMUX.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Ubot Via Termux</h3>
       <span>Python • Telegram</span>
@@ -314,7 +354,7 @@ footer{
     <div class="item"
     data-name="Web Bug DarkVerse"
     onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Web Bug DarkVerse</h3>
       <span>Beckhend • Bug</span>
@@ -324,8 +364,8 @@ footer{
   
     <div class="item"
     data-name="Bot auto Order"
-    onclick="window.open('https://www.mediafire.com/FILE4','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/j2omia0jfwzw7kf/Sc_Auto_Order_Razor(1).zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>SC Bot Auto Order</h3>
       <span>Wa • Nodejs</span>
@@ -336,51 +376,18 @@ footer{
     <div class="item"
     data-name="Tools Ddos V5"
     onclick="window.open('https://www.mediafire.com/file/lllqowvpimja1r9/DdosxYasam.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>SC Tools AlyaSamXDdosV5</h3>
       <span>Tools • Nodejs</span>
     </div>
     <div class="arrow">›</div>
 </div>
-
-   <div class="item"
-    data-name="Apk Termux"
-    onclick="window.open('https://www.mediafire.com/file/87wyxivysm5w5ng/Termux.apk/file','_blank')">
-    <img src="https://files.catbox.moe/6qdpiu.jpg">
-    <div class="info">
-      <h3>Apk Termux</h3>
-      <span>Apk • Android</span>
-    </div>
-    <div class="arrow">›</div>
-    </div>
-    
-       <div class="item"
-    data-name="Apk Termux"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
-    <div class="info">
-      <h3>Cpanel X Jpm</h3>
-      <span>Wa • Nodejs</span>
-    </div>
-    <div class="arrow">›</div>
-   </div>
-   
-   <div class="item"
-    data-name="Apk Termux"
-    onclick="window.open('https://www.mediafire.com/file/87wyxivysm5w5ng/Termux.apk/file','_blank')">
-    <img src="https://files.catbox.moe/6qdpiu.jpg">
-    <div class="info">
-      <h3>Apk Termux</h3>
-      <span>Apk • Android</span>
-    </div>
-    <div class="arrow">›</div>  
-    </div>
     
        <div class="item"
     data-name="Valentine Bug"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/lz4fcmebuqxjm7x/Valentine+-+ExC.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Valentine Infinity</h3>
       <span> Bug  • What'sapp</span>
@@ -391,7 +398,7 @@ footer{
        <div class="item"
     data-name="Apk Termux"
     onclick="window.open('https://www.mediafire.com/file/87wyxivysm5w5ng/Termux.apk/file','_blank')">
-    <img src="https://files.catbox.moe/6qdpiu.jpg">
+    <img src="https://files.catbox.moe/eg8m40.jpg">
     <div class="info">
       <h3>Apk Termux</h3>
       <span>Apk • Android</span>
@@ -400,9 +407,9 @@ footer{
     
     </div>
        <div class="item"
-    data-name="Apk Termux"
+    data-name="Ubot"
     onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Cpanel X Jpm</h3>
       <span>Wa • Nodejs</span>
@@ -411,31 +418,43 @@ footer{
 
     </div>
        <div class="item"
+    data-name="Cpanel Via Web"
+    onclick="window.open('https://www.mediafire.com/file/vsnk7bhyz60k3ox/CPANEL+VIA+WEB+(+BACKEND+).zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
+    <div class="info">
+      <h3>Cpanel Via Web</h3>
+      <span>Wa • Nodejs</span>
+    </div>
+    <div class="arrow">›</div>
+    
+    </div>
+       <div class="item"
     data-name="Script Ddos Via tele"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/caxzowhfk9774gu/Bot_Ddos_Tele.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Sc Ddos Via Tele</h3>
       <span>Telegram • Nodejs</span>
     </div>
     <div class="arrow">›</div>
-
+    
     </div>
        <div class="item"
     data-name="Apk Termux"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/48kijr24swy1b5j/UBOT_PREMIUM.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3> Ubot By Yasam </h3>
-      <span>Telegram • Nodejs</span>
+      <span>Telegram • python</span>
     </div>
     <div class="arrow">›</div>
-
+<!-- PEMBATAS SCROLL -->
+<div class="support-trigger" id="supportTrigger"></div>
     </div>
        <div class="item"
     data-name="Apk Termux"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/iny3ncd01tzhbyo/installer-premium-main.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Tool Installer Panel</h3>
       <span>Ptrodactyl • sh</span>
@@ -446,7 +465,7 @@ footer{
        <div class="item"
     data-name="Base Bot Wa"
     onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Base Bot Wa </h3>
       <span>Wa • Nodejs</span>
@@ -456,8 +475,8 @@ footer{
         </div>
        <div class="item"
     data-name="Bot Net ddos"
-    onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    onclick="window.open('https://www.mediafire.com/file/4qmzfofziqb9hew/Botnet.zip/file','_blank')">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Bot Net</h3>
       <span> Api • Nodejs</span>
@@ -468,7 +487,7 @@ footer{
        <div class="item"
     data-name="script Ddos By Yasam"
     onclick="window.open('https://www.mediafire.com/file/3g93058neaay77o/%25F0%259D%2590%2582%25F0%259D%2590%258F%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2584%25F0%259D%2590%258B_%25F0%259D%2590%2589%25F0%259D%2590%258F%25F0%259D%2590%258C_%25F0%259D%2590%2580%25F0%259D%2590%258D%25F0%259D%2590%2583_%25F0%259D%2590%258F%25F0%259D%2590%2594%25F0%259D%2590%2592%25F0%259D%2590%2587_%25F0%259D%2590%258A%25F0%259D%2590%258E%25F0%259D%2590%258D%25F0%259D%2590%2593%25F0%259D%2590%2580%25F0%259D%2590%258A_%25F0%259D%2590%2585%25F0%259D%2590%2588%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%2598_%25F0%259D%2591%25AB%25F0%259D%2592%2582%25F0%259D%2592%258F%25F0%259D%2592%259B%25F0%259D%2592%2585%25F0%259D%2592%2585%25F0%259D%2592%259A%25F0%259D%2592%259A%25E2%2597%25A1%25CC%2588%25E2%2583%259D%25EF%25B8%258E_.zip/file','_blank')">
-    <img src="https://files.catbox.moe/0wgbje.jpg">
+    <img src="https://files.catbox.moe/o384ed.jpg">
     <div class="info">
       <h3>Tools ALyaSamXDdosV9</h3>
       <span>Tools • Nodejs</span>
@@ -476,27 +495,22 @@ footer{
     <div class="arrow">›</div>
 
 </div>
-
-<div class="divider-text">
-  <span>💖 Support Developer</span>
-</div>
-
-<div class="support-card">
-  <h2>💖 Support & Sosial</h2>
-  <p>Dukung developer & follow biar makin update ✨</p>
+<!-- SUPPORT & SOSIAL -->
+<div class="support-float" id="supportFloat">
+  <h3>💖 Support & Sosial</h3>
 
   <div class="social-links">
     <a href="https://wa.me/6281519986005">💬 WhatsApp</a>
     <a href="https://youtube.com">▶️ YouTube</a>
-    <a href="https://instagram.com">📸 Instagram</a>
+    <a href="https://instagram.com/yasamdev">📸 Instagram</a>
+    <a 
+  href="https://files.catbox.moe/mpm1ja.jpg" 
+  target="_blank"
+  class="qris qris-link"
+>
+  <img src="https://files.catbox.moe/mpm1ja.jpg" alt="QRIS">
+</a>
   </div>
-
-<!-- 💖 DONATE -->
-<div class="donate-box">
-  <button onclick="window.open('https://files.catbox.moe/mpm1ja.jpg','_blank')">
-    💸 Donate via QRIS
-  </button>
-</div>
 
 <!-- 🎵 BACKGROUND MUSIC -->
 <audio id="bgm" preload="auto" loop>
@@ -527,6 +541,32 @@ document.addEventListener("click",()=>{
     played=true;
   }
 });
+  const support = document.getElementById("supportFloat");
+  const trigger = document.getElementById("supportTrigger");
+
+  let triggered = false;
+
+  window.addEventListener("scroll", () => {
+    const triggerTop = trigger.getBoundingClientRect().top;
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    // MODE DESKTOP: muncul setelah scroll 25% layar
+    const desktopTrigger = scrollY > vh * 0.25;
+
+    // MODE MOBILE: lewat pembatas
+    const mobileTrigger = triggerTop <= 0;
+
+    if ((mobileTrigger || desktopTrigger) && !triggered) {
+      support.classList.add("show");
+      triggered = true;
+    }
+
+    if (triggerTop > 0 && scrollY < vh * 0.25 && triggered) {
+      support.classList.remove("show");
+      triggered = false;
+    }
+  });
 </script>
 
 </body>
